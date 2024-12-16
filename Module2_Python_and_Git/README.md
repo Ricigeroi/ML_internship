@@ -5,6 +5,7 @@
 
 This repository contains implementations of common algorithm problems using Python. Each solution is designed to follow the guidelines provided in the learning materials, ensuring readability and efficiency. All exercises have been completed and committed to this repository.
 
+For a more convenient way to explore my solutions, you can visit my [LeetCode profile](https://leetcode.com/u/Ricigeroi/). The profile provides a structured view of the problems solved, along with submission details and additional insights.
 ## List of Implemented Algorithms
 1. **[Two Sum](a_TwoSum/main.py)**
 2. **[Contains Duplicate](b_ContainsDuplicate/main.py)**
