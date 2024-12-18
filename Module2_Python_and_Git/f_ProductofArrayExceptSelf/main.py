@@ -1,5 +1,5 @@
 class Solution:
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
+    def product_except_self(self, nums: List[int]) -> List[int]:
         n = len(nums)
         arr = [1] * n
 

@@ -1,5 +1,5 @@
 class Solution:
-    def characterReplacement(self, s: str, k: int) -> int:
+    def character_replacement(self, s: str, k: int) -> int:
         freq = {}
         left = 0
         max_freq = 0
