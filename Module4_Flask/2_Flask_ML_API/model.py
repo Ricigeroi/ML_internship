@@ -10,14 +10,14 @@ X = data.data
 y = data.target
 
 # Split dataset
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # Model building
 model = LogisticRegression()
-model.fit(X_train, y_train)
+model.fit(x_train, y_train)
 
 # Predictions
-y_pred = model.predict(X_test)
+y_pred = model.predict(x_test)
 
 # Evaluation metrics
 accuracy = accuracy_score(y_pred, y_test)
