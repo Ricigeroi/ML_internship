@@ -43,7 +43,7 @@ def predict():
         # Return the prediction as a JSON response
         return make_response(jsonify({'prediction': predictions_named}), 200)
     except Exception as e:
-        return jsonify({'error': str(e)})
+        return jsonify({'error': str(e)}), 400
 
 
 if __name__ == "__main__":
