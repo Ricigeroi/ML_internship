@@ -1,0 +1,13 @@
+from sqlalchemy import create_engine, text
+import pandas as pd
+
+
+engine = create_engine('postgresql+psycopg2://admin:admin@postgres-db:5432/module5')
+
+query = """
+    SELECT employees.id AS employee_id, employees.name AS employee_name, departments.name AS department_name
+    FROM employees
+    JOIN departments ON employees.department_id = departments.id;
+"""
+
+df = pd.read_sql_query(query, engine)

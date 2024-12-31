@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  jupyter-notebook:
+    build:
+      context: ./1_Jupyter_and_PostgreSQL/
+    ports:
+      - "8888:8888"
+    depends_on:
+      - postgres-db
+    networks:
+      - my-network
+    volumes:
+      - /Users/abardier/PycharmProjects/ML_internship:/workspace/
+
+  ml_api:
+    build:
+      context: ./2_Flask_ML_API
+    environment:
+      - DATABASE_URL=postgresql://admin:admin@postgres-db:5432/module5
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres-db
+    networks:
+      - my-network
+
+  postgres-db:
+    image: postgres
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: module5
+    ports:
+      - "7777:5432"
+    networks:
+      - my-network
+    volumes:
+      - db:/data
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  db:
+    driver: local
